@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+	
+
+</head>
+<body>
+<form id='all'>
+	
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					Bang du lieu binding
+				</div>
+			
+				<div class="modal-body">
+					<div id='exp'></div>
+				</div>
+				<div class="modal-footer">
+					Refrest
+				</div>
+			</div>
+		</div>
+	
+
+    <script>
+		$(document).ready(function(){
+			
+			var data = [
+			  ["", "Kia", "Nissan", "Toyota", "Honda"],
+			  ["2008", 10, 11, 12, 13],
+			  ["2009", 20, 11, 14, 13],
+			  ["2010", 30, 15, 12, 13]
+			];
+
+			var $container = $("#exp");
+			$container.handsontable({
+			  //data: data,
+			  startRows: 5,
+			  startCols: 10,
+			  colHeaders: true,
+              rowHeaders: true,
+			  //columns: [
+              //    { data: 1 },
+              //    { data: 2 },
+              //    { data: 3 },
+              //    { data: 4 },
+			  //],
+			  minSpareRows: 1
+			});
+
+			data[0][1] = "Ford"; //change "Kia" to "Ford" programatically
+			$container.handsontable('render'); //refresh the grid to display the new value	
+			
+			
+		});
+	</script>
+</form>
+</body>
+
+</html>
